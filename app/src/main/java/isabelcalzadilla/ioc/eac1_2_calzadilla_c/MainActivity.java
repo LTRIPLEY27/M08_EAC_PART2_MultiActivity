@@ -8,26 +8,31 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button enterButton;
+    // ATRIBUTOS DE LA CLASE A SER USADOS PARA INTENTS Y DEMÁS
+
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // INICIALIZACIÓN DEL BUTTON
-        enterButton = findViewById(R.id.enter_button);
+        // DEFINICIÓN DEL BUTTON PARA LOGRAR EL INTENT
 
-        // LLAMADO AL MÉTODO CON EL BUTTON PARA FORZAR EL INTENT
-        enterButton.setOnClickListener(this::callToActivityTwo);
+        button = findViewById(R.id.enter_button);
+
+        // SETTING DEL BUTTON PARA QUE LLAME AL MÉTODO DEL INTENT Y NOS TRASLADE A LA SGUNDA ACTIVITY
+        button.setOnClickListener(this::callActivityTwo);
     }
 
 
-    // MÉTODO QUE TOMARÁ LA ACCIÓN DEL BUTTON Y LLAMARÁ A LA SEGUNDA ACTIVITY
-    public void callToActivityTwo(View activityTwo){
+    //MÉTODO PARA LLAMAR A LA SEGUNDA ACTIVITY
+    public void callActivityTwo(View activityTwo){
 
-        Intent actTwo = new Intent(this, MainActivity2.class);
+        // ADICIÓN DEL SEGUNDO ACTIVITY AL INTENT PARA DISPARAR LA ACCIÓN EN CUANTO EL BOTTON SEA LLAMADO
+        Intent activityDos = new Intent(this, EnterToIOC.class);
 
-        startActivity(actTwo);
+        //MÉTODO 'startActivity' LA ACCIÓN MEDIANTE EL INTENT DE LA ACTIVIDAD 2
+        startActivity(activityDos);
     }
 }
