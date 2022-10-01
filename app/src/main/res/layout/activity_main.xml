@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--IMAGEVIEW DENTRO DEL CONSTRAINT LAYOUT PARA POSICIONAR EL ELEMENTO DENTRO DEL CONTENEDROR Y ALIENDALO CON EL PARENT PARA UBICAR MEJOR ELE ELEMENTO
+        - LOS CONSTRAINTS :
+
+            - layout_constraintBottom_toBottomOf
+            - layout_constraintEnd_toEndOf
+            - layout_constraintTop_toTopOf
+            - layout_constraintStart_toStartOf
+
+            REFIEREN AL 'PARENT' PUES SE ENGANCHARÁN EN POSICIÓN A ÉSTE, LOS SIGUIENTES ELEMENTOS LO HARÁN REFIERIENDO AL ID DE ÉSTE PRIMER ELEMENTO O LOS QUE DERIVEN.
+
+    -->
+
+    <!-- SEGUNDO ELEMENTO UBICADO EN RELACIÓN AL ANTERIOR, YA NO AL PARENT-->
+
+    <ImageView
+        android:id="@+id/ioc_logo"
+        android:layout_width="286dp"
+        android:layout_height="163dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.228"
+        app:srcCompat="@drawable/ioc2" />
+
+    <!-- TERCER ELEMENTO UBICADO EN RELACIÓN AL ANTERIOR, YA NO AL PARENT-->
+
+    <EditText
+        android:id="@+id/usuari"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/usuari"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ioc_logo"
+        app:layout_constraintVertical_bias="0.127" />
+
+    <!-- CUARTO ELEMENTO UBICADO EN RELACIÓN AL ANTERIOR, YA NO AL PARENT, EDITTEXT DE PASSWORD-->
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/password"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/usuari"
+        app:layout_constraintVertical_bias="0.037" />
+
+    <!-- QUINTO ELEMENTO UBICADO EN RELACIÓN AL ANTERIOR, BUTTON QUE DISPARARÁ LA ACCIÓN A LA SEGUNDA ACTIVITY-->
+    <Button
+        android:id="@+id/enter_button"
+        android:layout_width="163dp"
+        android:layout_height="47dp"
+        android:background="@color/darkBlue"
+        android:text="@string/enter"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password"
+        app:layout_constraintVertical_bias="0.27" />
+
+</android.support.constraint.ConstraintLayout>
