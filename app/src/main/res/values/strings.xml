@@ -4,10 +4,15 @@
     <string name="usuari">Usuari</string>
     <string name="password">Contrasenya</string>
     <string name="enter">ENTRA</string>
+    <string name="out">SALIR</string>
     <string name="subtext">Selecciona una de las siguientes opciones, por favor :</string>
     <string name="search">Buscar</string>
     <string name="phone">Llamar</string>
     <string name="share">Compartir</string>
+    <string name="caller">Hacer llamada</string>
     <string name="send">Enviar</string>
+    <string name="buscar">Buscar en la Web</string>
+    <string name="sharing">Enviar y Compartir</string>
+    <string name="another">Enviar a otra Activity</string>
 
 </resources>

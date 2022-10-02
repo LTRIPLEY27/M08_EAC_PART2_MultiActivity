@@ -16,7 +16,7 @@ import android.widget.TextView;
 public class EnterToIOC extends MainActivity implements View.OnClickListener {
 
     private TextView user;
-    private Button btn_web, btn_call;
+    private Button btn_web, btn_call, btn_sharing, btn_sending;
     private WebView web;
     private EditText wetToSearch, numberToCall;
 
@@ -34,10 +34,14 @@ public class EnterToIOC extends MainActivity implements View.OnClickListener {
 
         btn_web = findViewById(R.id.btn_search);
         btn_call = findViewById(R.id.btn_caller);
+        btn_sharing = findViewById(R.id.btn_share);
+        btn_sending = findViewById(R.id.btn_other);
 
         // LLAMADO A LA ACCION MEDIANTE LOS LISTENERS;
         btn_web.setOnClickListener(this);
         btn_call.setOnClickListener(this);
+        btn_sharing.setOnClickListener(this);
+        btn_sending.setOnClickListener(this);
     }
 
     // ACTION LISTENER QUE CONTENDRÁ LAS ACCIONES SEGÚN SE PRESIONE EL BUTTON CON UN SWITCH
