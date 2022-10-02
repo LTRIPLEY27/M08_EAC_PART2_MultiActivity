@@ -23,18 +23,20 @@
     <!--WEBVIEW QUE MOSTRARÁ LA RESPUESTA A LA BÚSQUEDA WEB QUE LE REALICEMOS-->
 
 
+    <!-- BUTTON PARA ENVÍAR LA CONSULTA WEB-->
+
+    <!-- PART 2 : HACER LLAMADAS DESDE UN BUTTON CON INTENT-->
+
     <WebView
         android:id="@+id/search"
         android:layout_width="127dp"
         android:layout_height="214dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.132"
-        tools:layout_editor_absoluteX="150dp"
-        tools:layout_editor_absoluteY="150dp"
+        app:layout_constraintHorizontal_bias="0.154"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user"
-        app:layout_constraintVertical_bias="0.119" />
+        app:layout_constraintVertical_bias="0.075" />
 
     <EditText
         android:id="@+id/bar_search"
@@ -43,12 +45,11 @@
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintHorizontal_bias="0.245"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search"
-        app:layout_constraintVertical_bias="0.084" />
+        app:layout_constraintVertical_bias="0.038" />
 
-    <!-- BUTTON PARA ENVÍAR LA CONSULTA WEB-->
     <Button
         android:id="@+id/btn_search"
         android:layout_width="wrap_content"
@@ -59,9 +60,36 @@
         android:textCursorDrawable="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.173"
+        app:layout_constraintHorizontal_bias="0.185"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bar_search"
-        app:layout_constraintVertical_bias="0.059" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/make_call"
+        android:layout_width="157dp"
+        android:layout_height="27dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.893"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/user"
+        app:layout_constraintVertical_bias="0.4" />
+
+    <Button
+        android:id="@+id/btn_caller"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/darkBlue"
+        android:text="@string/phone"
+        android:textColor="@color/white"
+        android:textCursorDrawable="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.832"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/make_call"
+        app:layout_constraintVertical_bias="0.155" />
 
 </android.support.constraint.ConstraintLayout>
