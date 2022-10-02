@@ -5,12 +5,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
     // ATRIBUTOS DE LA CLASE A SER USADOS PARA INTENTS Y DEMÁS
 
     private Button button;
+    private EditText usuari;
+    private String tesxUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
         // ADICIÓN DEL SEGUNDO ACTIVITY AL INTENT PARA DISPARAR LA ACCIÓN EN CUANTO EL BOTTON SEA LLAMADO
         Intent activityDos = new Intent(this, EnterToIOC.class);
 
+        //LLAMADO AL EDITTEXT PARA PASAR EL PARAMETRO USER MEDIANTE EL ENLAZAMIENTO DE ID A LA SEGUNDA ACTIVITY
+        usuari = findViewById(R.id.usuari);
+        tesxUser = usuari.getText().toString();
+        activityDos.putExtra("getUser", tesxUser);
         //MÉTODO 'startActivity' LA ACCIÓN MEDIANTE EL INTENT DE LA ACTIVIDAD 2
         startActivity(activityDos);
     }
