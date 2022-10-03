@@ -18,7 +18,7 @@ public class EnterToIOC extends MainActivity implements View.OnClickListener {
     private TextView user;
     private Button btn_web, btn_call, btn_sharing, btn_sending;
     private WebView web;
-    private EditText wetToSearch, numberToCall;
+    private EditText wetToSearch, numberToCall, sharing, sendOther;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -54,7 +54,12 @@ public class EnterToIOC extends MainActivity implements View.OnClickListener {
             case R.id.btn_caller:
                 getCall();
                 break;
-
+            case R.id.btn_share:
+                getShare();
+                break;
+            case R.id.btn_other:
+                getOtherActivity();
+                break;
         }
     }
 
@@ -68,7 +73,7 @@ public class EnterToIOC extends MainActivity implements View.OnClickListener {
         web.loadUrl("https://" + searchWeb);
 
         Intent busqueda = new Intent(Intent.ACTION_VIEW, Uri.parse(web.getUrl()));
-        startActivity(busqueda);
+        //startActivity(busqueda);
     }
 
     //MÉTODO QUE EJECUTA EL INTENT PARA LLAMADAS
@@ -77,11 +82,36 @@ public class EnterToIOC extends MainActivity implements View.OnClickListener {
         numberToCall = findViewById(R.id.make_call);
 
         String number = numberToCall.getText().toString();
+        //Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+number));
+        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+number));
 
-        Intent call = new Intent(Intent.ACTION_CALL, Uri.parse(number));
-
-        startActivity(call);
+        startActivity(intent);
     }
 
+    //MÉTODO PARA COMPARTIR DESDE LA APP
+    public void getShare(){
+
+        sharing = findViewById(R.id.share);
+        String text = sharing.getText().toString();
+
+        Intent shared = new Intent(Intent.ACTION_SEND);
+        shared.putExtra(Intent.EXTRA_TEXT, text);
+        shared.setType("text/plain");
+
+        Intent shareIntent = Intent.createChooser(shared, null);
+        startActivity(shareIntent);
+    }
+
+    public void getOtherActivity(){
+
+        sendOther = findViewById(R.id.other_activity);
+        String text = sendOther.getText().toString();
+
+        Intent sendToAnother = new Intent(this, ThirdActivity.class);
+        sendToAnother.putExtra("parsing", text);
+
+        startActivity(sendToAnother);
+
+    }
 
 }

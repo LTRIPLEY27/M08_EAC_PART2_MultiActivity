@@ -23,153 +23,155 @@
     <!--WEBVIEW QUE MOSTRARÁ LA RESPUESTA A LA BÚSQUEDA WEB QUE LE REALICEMOS-->
 
 
-    <WebView
-        android:id="@+id/search"
-        android:layout_width="318dp"
-        android:layout_height="155dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user"
-        app:layout_constraintVertical_bias="0.065" />
-
     <!-- BUTTON PARA ENVÍAR LA CONSULTA WEB-->
 
 
     <!-- PART 2 : HACER LLAMADAS DESDE UN BUTTON CON INTENT-->
 
-
-
+    <WebView
+        android:id="@+id/search"
+        android:layout_width="611dp"
+        android:layout_height="218dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.222"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user"
+        app:layout_constraintVertical_bias="0.136" />
 
     <EditText
         android:id="@+id/bar_search"
-        android:layout_width="183dp"
-        android:layout_height="44dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:hint="@string/buscar"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.334"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.135" />
 
     <Button
         android:id="@+id/btn_search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="208dp"
+        android:layout_height="50dp"
         android:background="@color/darkBlue"
         android:text="@string/search"
         android:textColor="@color/white"
         android:textCursorDrawable="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.336"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bar_search"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.13" />
+
+
+    <!--PART 3 : COMPARTIR-->
+
+
+    <!--PART 4 : TEXT A OTRA ACTIVITY-->
 
     <EditText
         android:id="@+id/make_call"
-        android:layout_width="157dp"
-        android:layout_height="40dp"
+        android:layout_width="251dp"
+        android:layout_height="52dp"
         android:hint="@string/caller"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.738"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user"
-        app:layout_constraintVertical_bias="0.45" />
+        app:layout_constraintVertical_bias="0.494" />
 
     <Button
         android:id="@+id/btn_caller"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="201dp"
+        android:layout_height="52dp"
         android:background="@color/darkBlue"
         android:text="@string/phone"
         android:textColor="@color/white"
         android:textCursorDrawable="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.727"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/make_call"
-        app:layout_constraintVertical_bias="0.0" />
-
-
-    <!--PART 4 : TEXT A OTRA ACTIVITY-->
+        app:layout_constraintVertical_bias="0.111" />
 
     <EditText
         android:id="@+id/share"
-        android:layout_width="266dp"
-        android:layout_height="39dp"
+        android:layout_width="214dp"
+        android:layout_height="36dp"
         android:hint="@string/sharing"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.327"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_search"
-        app:layout_constraintVertical_bias="0.305" />
+        app:layout_constraintVertical_bias="0.23" />
 
     <!--BOTON DE SALIR DE LA APLICACIÓN-->
 
     <Button
         android:id="@+id/btn_share"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="212dp"
+        android:layout_height="48dp"
         android:background="@color/darkBlue"
         android:text="@string/share"
         android:textColor="@color/white"
         android:textCursorDrawable="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/share"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.152" />
 
-
-    <!--PART 3 : COMPARTIR-->
     <EditText
         android:id="@+id/other_activity"
-        android:layout_width="306dp"
-        android:layout_height="50dp"
+        android:layout_width="249dp"
+        android:layout_height="55dp"
         android:hint="@string/another"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintHorizontal_bias="0.736"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_caller"
-        app:layout_constraintVertical_bias="0.463" />
+        app:layout_constraintVertical_bias="0.246" />
 
     <Button
         android:id="@+id/btn_other"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="197dp"
+        android:layout_height="52dp"
         android:background="@color/darkBlue"
         android:text="@string/send"
         android:textColor="@color/white"
         android:textCursorDrawable="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.723"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/other_activity"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btn_out"
-        android:layout_width="278dp"
-        android:layout_height="56dp"
+        android:layout_width="183dp"
+        android:layout_height="53dp"
         android:background="@color/darkBlue"
         android:text="@string/out"
         android:textColor="@color/white"
         android:textCursorDrawable="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_share"
-        app:layout_constraintVertical_bias="0.923" />
+        app:layout_constraintVertical_bias="0.466" />
 
 </android.support.constraint.ConstraintLayout>

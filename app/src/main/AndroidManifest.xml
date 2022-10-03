@@ -2,12 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="isabelcalzadilla.ioc.eac1_2_calzadilla_c">
-
-    <!--INDICACIÓN DE LOS PERMISOS PARA EJECUTAR CON LOS INTENTS : INTERNET, LLAMAR ECT-->
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
-    <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS"/>
-
+    <!-- INDICACIÓN DE LOS PERMISOS PARA EJECUTAR CON LOS INTENTS : INTERNET, LLAMAR ECT -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
         android:allowBackup="true"
@@ -19,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EAC1_2_Calzadilla_C"
         tools:targetApi="31">
+        <activity
+            android:name=".ThirdActivity"
+            android:exported="false" />
         <activity
             android:name=".EnterToIOC"
             android:exported="false" />
