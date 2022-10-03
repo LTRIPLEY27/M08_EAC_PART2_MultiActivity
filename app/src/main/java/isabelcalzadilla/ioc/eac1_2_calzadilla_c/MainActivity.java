@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button button;
     private EditText usuari;
+    private EditText password;
     private String tesxUser;
 
     @Override
@@ -20,26 +22,41 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // DEFINICIÓN DEL BUTTON PARA LOGRAR EL INTENT
+            // DEFINICIÓN DEL BUTTON PARA LOGRAR EL INTENT
 
         button = findViewById(R.id.enter_button);
 
-        // SETTING DEL BUTTON PARA QUE LLAME AL MÉTODO DEL INTENT Y NOS TRASLADE A LA SGUNDA ACTIVITY
+            // SETTING DEL BUTTON PARA QUE LLAME AL MÉTODO DEL INTENT Y NOS TRASLADE A LA SGUNDA ACTIVITY
         button.setOnClickListener(this::callActivityTwo);
+
     }
 
 
     //MÉTODO PARA LLAMAR A LA SEGUNDA ACTIVITY
     public void callActivityTwo(View activityTwo){
 
-        // ADICIÓN DEL SEGUNDO ACTIVITY AL INTENT PARA DISPARAR LA ACCIÓN EN CUANTO EL BOTTON SEA LLAMADO
-        Intent activityDos = new Intent(this, EnterToIOC.class);
-
-        //LLAMADO AL EDITTEXT PARA PASAR EL PARAMETRO USER MEDIANTE EL ENLAZAMIENTO DE ID A LA SEGUNDA ACTIVITY
         usuari = findViewById(R.id.usuari);
         tesxUser = usuari.getText().toString();
-        activityDos.putExtra("getUser", tesxUser);
-        //MÉTODO 'startActivity' LA ACCIÓN MEDIANTE EL INTENT DE LA ACTIVIDAD 2
-        startActivity(activityDos);
+        password = findViewById(R.id.password);
+
+        String user = usuari.toString();
+        String pass = password.toString();
+
+        if(user.length() > 0 && pass.length() > 0){
+            // ADICIÓN DEL SEGUNDO ACTIVITY AL INTENT PARA DISPARAR LA ACCIÓN EN CUANTO EL BOTTON SEA LLAMADO
+            Intent activityDos = new Intent(this, EnterToIOC.class);
+
+            //LLAMADO AL EDITTEXT PARA PASAR EL PARAMETRO USER MEDIANTE EL ENLAZAMIENTO DE ID A LA SEGUNDA ACTIVITY
+
+            activityDos.putExtra("getUser", tesxUser);
+            //MÉTODO 'startActivity' LA ACCIÓN MEDIANTE EL INTENT DE LA ACTIVIDAD 2
+            startActivity(activityDos);
+            Toast.makeText(getApplicationContext(), "Bienvenido", Toast.LENGTH_SHORT).show();
+
+        }
+
+
     }
+
+
 }

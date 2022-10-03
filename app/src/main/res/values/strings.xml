@@ -15,7 +15,8 @@
     <string name="buscar">Buscar en la Web</string>
     <string name="sharing">Enviar y Compartir</string>
     <string name="another">Enviar a otra Activity</string>
-    <string name="third">Welcome to the IOC-noFrog</string>
+    <string name="third">Welcome to the IOC-noSapo</string>
     <string name="ending">Come back soon!!</string>
+    <string name="receive">text to receive</string>
 
 </resources>

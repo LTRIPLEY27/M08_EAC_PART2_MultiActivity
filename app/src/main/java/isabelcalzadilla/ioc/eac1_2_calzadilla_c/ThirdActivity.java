@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class ThirdActivity extends EnterToIOC {
 
-    private TextView texter;
+    private TextView texter, user;
     private EditText text;
     private Button backing;
 

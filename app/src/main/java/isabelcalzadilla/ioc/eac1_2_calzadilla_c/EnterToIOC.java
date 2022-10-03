@@ -18,6 +18,7 @@ public class EnterToIOC extends MainActivity implements View.OnClickListener {
     private Button btn_web, btn_call, btn_sharing, btn_sending, btn_back;
     private WebView web;
     private EditText wetToSearch, numberToCall, sharing, sendOther;
+    private String users;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -29,7 +30,8 @@ public class EnterToIOC extends MainActivity implements View.OnClickListener {
         Intent name = getIntent();
 
         user = findViewById(R.id.user);
-        user.setText("Benvingut/da a la IOC  " + name.getStringExtra("getUser"));
+        users = name.getStringExtra("getUser");
+        user.setText("Benvingut/da a la IOC  " + users);
 
         btn_web = findViewById(R.id.btn_search);
         btn_call = findViewById(R.id.btn_caller);
@@ -85,6 +87,9 @@ public class EnterToIOC extends MainActivity implements View.OnClickListener {
 
         Intent busqueda = new Intent(Intent.ACTION_VIEW, Uri.parse(web.getUrl()));
         //startActivity(busqueda);
+
+        //llamado a limpiar el teclado
+        wetToSearch.setText("");
     }
 
     //MÉTODO QUE EJECUTA EL INTENT PARA LLAMADAS
@@ -100,6 +105,9 @@ public class EnterToIOC extends MainActivity implements View.OnClickListener {
 
         Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+number));
         startActivity(intent);
+
+        //llamado a limpiar el teclado
+        numberToCall.setText("");
     }
 
     //MÉTODO PARA COMPARTIR DESDE LA APP
@@ -119,6 +127,9 @@ public class EnterToIOC extends MainActivity implements View.OnClickListener {
 
         Intent shareIntent = Intent.createChooser(shared, null);
         startActivity(shareIntent);
+
+        //llamado a limpiar el teclado
+        sharing.setText("");
     }
 
     public void getOtherActivity() {
@@ -132,16 +143,19 @@ public class EnterToIOC extends MainActivity implements View.OnClickListener {
         }
         Intent sendToAnother = new Intent(this, ThirdActivity.class);
         sendToAnother.putExtra("parsing", text);
+        sendToAnother.putExtra("user", users);
 
         startActivity(sendToAnother);
+
+        //llamado a limpiar el teclado
+        sendOther.setText("");
     }
 
-    public View.OnClickListener getBack(){
+    public void getBack(){
 
         Intent comeBack = new Intent(this, MainActivity.class);
 
         startActivity(comeBack);
         Toast.makeText(getApplicationContext(), "Adeu", Toast.LENGTH_SHORT).show();
-        return null;
     }
 }
