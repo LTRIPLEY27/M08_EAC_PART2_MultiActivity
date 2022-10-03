@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ThirdActivity extends EnterToIOC {
 
@@ -30,6 +31,9 @@ public class ThirdActivity extends EnterToIOC {
     public void startThirdActivity(){
         Intent getting = getIntent();
 
+        user = findViewById(R.id.users);
+        user.setText("Benvingut/da a la IOC  " + getting.getStringExtra("user"));
+
         texter = findViewById(R.id.uso);
         texter.setText(getting.getStringExtra("parsing"));
 
@@ -42,6 +46,7 @@ public class ThirdActivity extends EnterToIOC {
 
         Intent back = new Intent(this, EnterToIOC.class);
         startActivity(back);
+        Toast.makeText(getApplicationContext(), "Gracias, vuelva pronto", Toast.LENGTH_LONG).show();
     }
 
 }
