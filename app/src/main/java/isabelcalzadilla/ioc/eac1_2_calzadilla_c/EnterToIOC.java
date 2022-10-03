@@ -3,20 +3,19 @@ package isabelcalzadilla.ioc.eac1_2_calzadilla_c;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class EnterToIOC extends MainActivity implements View.OnClickListener {
 
     private TextView user;
-    private Button btn_web, btn_call, btn_sharing, btn_sending;
+    private Button btn_web, btn_call, btn_sharing, btn_sending, btn_back;
     private WebView web;
     private EditText wetToSearch, numberToCall, sharing, sendOther;
 
@@ -36,12 +35,14 @@ public class EnterToIOC extends MainActivity implements View.OnClickListener {
         btn_call = findViewById(R.id.btn_caller);
         btn_sharing = findViewById(R.id.btn_share);
         btn_sending = findViewById(R.id.btn_other);
+        btn_back = findViewById(R.id.btn_out);
 
         // LLAMADO A LA ACCION MEDIANTE LOS LISTENERS;
         btn_web.setOnClickListener(this);
         btn_call.setOnClickListener(this);
         btn_sharing.setOnClickListener(this);
         btn_sending.setOnClickListener(this);
+        btn_back.setOnClickListener(this);
     }
 
     // ACTION LISTENER QUE CONTENDRÁ LAS ACCIONES SEGÚN SE PRESIONE EL BUTTON CON UN SWITCH
@@ -60,6 +61,11 @@ public class EnterToIOC extends MainActivity implements View.OnClickListener {
             case R.id.btn_other:
                 getOtherActivity();
                 break;
+            case R.id.btn_out:
+                getBack();
+                break;
+            default :
+                Toast.makeText(getApplicationContext(), "Debe de seleccionar una opción válida", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -68,6 +74,11 @@ public class EnterToIOC extends MainActivity implements View.OnClickListener {
         web = findViewById(R.id.search);
         wetToSearch = findViewById(R.id.bar_search);
         String searchWeb = wetToSearch.getText().toString();
+
+        if(searchWeb.length() == 0){
+            Toast.makeText(getApplicationContext(), "Debe de contener una url a la cual ubicar", Toast.LENGTH_LONG).show();
+            Log.w("ADVERTENCIA : ","Debe de contener una url a la cual ubicar");
+        }
 
         web.setEnabled(true);
         web.loadUrl("https://" + searchWeb);
@@ -80,19 +91,27 @@ public class EnterToIOC extends MainActivity implements View.OnClickListener {
     public void getCall(){
 
         numberToCall = findViewById(R.id.make_call);
-
         String number = numberToCall.getText().toString();
-        //Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+number));
-        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+number));
 
+        if(number.length() == 0){
+            Toast.makeText(getApplicationContext(), "Debe de contener un número al cual llamar", Toast.LENGTH_LONG).show();
+            Log.w("ADVERTENCIA : ","Debe de contener un número al cual llamar");
+        }
+
+        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+number));
         startActivity(intent);
     }
 
     //MÉTODO PARA COMPARTIR DESDE LA APP
-    public void getShare(){
+    public void getShare() {
 
         sharing = findViewById(R.id.share);
         String text = sharing.getText().toString();
+
+        if(text.length() == 0){
+            Toast.makeText(getApplicationContext(), "Debe de contener un mensaje a compartir", Toast.LENGTH_LONG).show();
+            Log.w("ADVERTENCIA : ","Debe de contener un mensaje a compartir");
+        }
 
         Intent shared = new Intent(Intent.ACTION_SEND);
         shared.putExtra(Intent.EXTRA_TEXT, text);
@@ -102,16 +121,27 @@ public class EnterToIOC extends MainActivity implements View.OnClickListener {
         startActivity(shareIntent);
     }
 
-    public void getOtherActivity(){
+    public void getOtherActivity() {
 
         sendOther = findViewById(R.id.other_activity);
         String text = sendOther.getText().toString();
 
+        if(text.length() == 0){
+            Toast.makeText(getApplicationContext(), "Debe de contener un mensaje a enviar", Toast.LENGTH_LONG).show();
+            Log.w("ADVERTENCIA : ","Debe de contener un mensaje a enviar");
+        }
         Intent sendToAnother = new Intent(this, ThirdActivity.class);
         sendToAnother.putExtra("parsing", text);
 
         startActivity(sendToAnother);
-
     }
 
+    public View.OnClickListener getBack(){
+
+        Intent comeBack = new Intent(this, MainActivity.class);
+
+        startActivity(comeBack);
+        Toast.makeText(getApplicationContext(), "Adeu", Toast.LENGTH_SHORT).show();
+        return null;
+    }
 }

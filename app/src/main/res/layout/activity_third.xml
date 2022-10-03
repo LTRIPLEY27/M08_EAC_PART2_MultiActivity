@@ -22,24 +22,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.15" />
 
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:src="@drawable/tenor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="-65dp" />
+
     <EditText
         android:id="@+id/receiver"
-        android:layout_width="183dp"
-        android:layout_height="44dp"
+        android:layout_width="281dp"
+        android:layout_height="37dp"
         android:hint="@string/buscar"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.584"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/uso"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="0.837" />
 
     <Button
-        android:id="@+id/btn_search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/btn_turn_back"
+        android:layout_width="237dp"
+        android:layout_height="44dp"
         android:background="@color/darkBlue"
-        android:text="@string/search"
+        android:text="@string/back"
         android:textColor="@color/white"
         android:textCursorDrawable="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
