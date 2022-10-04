@@ -77,8 +77,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_search"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintTop_toBottomOf="@+id/user"
+        app:layout_constraintVertical_bias="0.45" />
 
     <Button
         android:id="@+id/btn_caller"
@@ -98,8 +98,6 @@
 
     <!--PART 4 : TEXT A OTRA ACTIVITY-->
 
-    <!--BOTON DE SALIR DE LA APLICACIÓN-->
-
     <EditText
         android:id="@+id/share"
         android:layout_width="266dp"
@@ -108,10 +106,11 @@
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_caller"
-        app:layout_constraintVertical_bias="0.054" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_search"
+        app:layout_constraintVertical_bias="0.305" />
+
+    <!--BOTON DE SALIR DE LA APLICACIÓN-->
 
     <Button
         android:id="@+id/btn_share"
@@ -130,19 +129,18 @@
 
 
     <!--PART 3 : COMPARTIR-->
-
     <EditText
         android:id="@+id/other_activity"
         android:layout_width="306dp"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:hint="@string/another"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_share"
-        app:layout_constraintVertical_bias="0.059" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_caller"
+        app:layout_constraintVertical_bias="0.463" />
 
     <Button
         android:id="@+id/btn_other"
@@ -157,7 +155,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/other_activity"
-        app:layout_constraintVertical_bias="0.063" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btn_out"
@@ -169,9 +167,9 @@
         android:textCursorDrawable="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintHorizontal_bias="0.547"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_other"
-        app:layout_constraintVertical_bias="0.516" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_share"
+        app:layout_constraintVertical_bias="0.923" />
 
 </android.support.constraint.ConstraintLayout>
