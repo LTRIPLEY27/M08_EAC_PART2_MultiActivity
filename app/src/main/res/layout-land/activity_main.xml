@@ -26,54 +26,55 @@
 
     <ImageView
         android:id="@+id/ioc_logo"
-        android:layout_width="802dp"
-        android:layout_height="241dp"
+        android:layout_width="479dp"
+        android:layout_height="124dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.208"
+        app:layout_constraintVertical_bias="0.129"
         app:srcCompat="@drawable/ioc2" />
 
     <EditText
         android:id="@+id/usuari"
-        android:layout_width="447dp"
-        android:layout_height="49dp"
+        android:layout_width="261dp"
+        android:layout_height="42dp"
         android:hint="@string/usuari"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ioc_logo"
-        app:layout_constraintVertical_bias="0.174" />
+        app:layout_constraintVertical_bias="0.12" />
+
+    <!-- QUINTO ELEMENTO UBICADO EN RELACIÓN AL ANTERIOR, BUTTON QUE DISPARARÁ LA ACCIÓN A LA SEGUNDA ACTIVITY-->
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="451dp"
-        android:layout_height="46dp"
+        android:layout_width="259dp"
+        android:layout_height="41dp"
         android:hint="@string/password"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/usuari"
-        app:layout_constraintVertical_bias="0.037" />
+        app:layout_constraintVertical_bias="0.07" />
 
-    <!-- QUINTO ELEMENTO UBICADO EN RELACIÓN AL ANTERIOR, BUTTON QUE DISPARARÁ LA ACCIÓN A LA SEGUNDA ACTIVITY-->
     <Button
         android:id="@+id/enter_button"
-        android:layout_width="543dp"
-        android:layout_height="83dp"
+        android:layout_width="472dp"
+        android:layout_height="55dp"
         android:background="@color/darkBlue"
         android:text="@string/enter"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/password"
-        app:layout_constraintVertical_bias="0.606" />
+        app:layout_constraintVertical_bias="0.246" />
 
 </android.support.constraint.ConstraintLayout>
